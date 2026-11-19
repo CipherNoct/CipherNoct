@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="archTitle archDesc">
+  <title id="archTitle">Bridge Framework architecture</title>
+  <desc id="archDesc">Real browsers on the left, a stateful Bridge Server, composable CLI commands, and an AI operator. State and memory persist below.</desc>
+
+  <defs>
+    <linearGradient id="abg" x1="0" y1="0" x2="1200" y2="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#07080C"/>
+      <stop offset="0.55" stop-color="#090B11"/>
+      <stop offset="1" stop-color="#07080C"/>
+    </linearGradient>
+    <radialGradient id="aglow" cx="600" cy="300" r="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5B7CFA" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#5B7CFA" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="adots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#2A3044"/>
+    </pattern>
+
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#5C6FA8"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#44506E"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="620" fill="url(#abg)"/>
+  <rect width="1200" height="620" fill="url(#adots)" opacity="0.16"/>
+  <rect width="1200" height="620" fill="url(#aglow)"/>
+
+  <g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+    <text x="70" y="70" font-size="10" letter-spacing="4" fill="#5F78D8">02 / SYSTEM</text>
+    <text x="70" y="112" font-size="34" font-weight="500" letter-spacing="1" fill="#E8EAF1">Bridge Framework</text>
+    <text x="70" y="142" font-size="13" letter-spacing="0.5" fill="#7C849A">One runtime. Real browsers. Five platforms. An AI at the helm.</text>
+
+    <circle cx="1084" cy="66" r="3" fill="#6E8BFF">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <text x="1094" y="70" font-size="9.5" letter-spacing="2.5" fill="#4F5870">OPERATIONAL</text>
+  </g>
+
+  <!-- platforms -->
+  <g font-family="Inter, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+    <text x="86" y="194" font-size="9.5" letter-spacing="3" fill="#4D556C" font-family="Inter, -apple-system, Arial, sans-serif">PLATFORMS</text>
+
+    <g>
+      <rect x="70" y="212" width="170" height="40" rx="8" fill="#0C0F17" stroke="#1C2334"/>
+      <rect x="70" y="212" width="2.5" height="40" rx="1.2" fill="#6E8BFF" opacity="0.25">
+        <animate attributeName="opacity" values="0.18;0.6;0.18" dur="5s" repeatCount="indefinite"/>
+      </rect>
+      <text x="88" y="237" font-size="14" fill="#C9CFDD">抖音</text>
+      <text x="222" y="237" text-anchor="end" font-size="9" letter-spacing="1.5" fill="#3E4558" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">01</text>
+    </g>
+
+    <g>
+      <rect x="70" y="264" width="170" height="40" rx="8" fill="#0C0F17" stroke="#1C2334"/>
+      <rect x="70" y="264" width="2.5" height="40" rx="1.2" fill="#6E8BFF" opacity="0.25">
+        <animate attributeName="opacity" values="0.18;0.6;0.18" dur="5s" begin="0.4s" repeatCount="indefinite"/>
+      </rect>
+      <text x="88" y="289" font-size="14" fill="#C9CFDD">TikTok</text>
+      <text x="222" y="289" text-anchor="end" font-size="9" letter-spacing="1.5" fill="#3E4558" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">02</text>
+    </g>
+
+    <g>
+      <rect x="70" y="316" width="170" height="40" rx="8" fill="#0C0F17" stroke="#1C2334"/>
+      <rect x="70" y="316" width="2.5" height="40" rx="1.2" fill="#6E8BFF" opacity="0.25">
+        <animate attributeName="opacity" values="0.18;0.6;0.18" dur="5s" begin="0.8s" repeatCount="indefinite"/>
+      </rect>
+      <text x="88" y="341" font-size="14" fill="#C9CFDD">小红书</text>
+      <text x="222" y="341" text-anchor="end" font-size="9" letter-spacing="1.5" fill="#3E4558" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">03</text>
+    </g>
+
+    <g>
+      <rect x="70" y="368" width="170" height="40" rx="8" fill="#0C0F17" stroke="#1C2334"/>
+      <rect x="70" y="368" width="2.5" height="40" rx="1.2" fill="#6E8BFF" opacity="0.25">
+        <animate attributeName="opacity" values="0.18;0.6;0.18" dur="5s" begin="1.2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="88" y="393" font-size="14" fill="#C9CFDD">BOSS 直聘</text>
+      <text x="222" y="393" text-anchor="end" font-size="9" letter-spacing="1.5" fill="#3E4558" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">04</text>
+    </g>
+
+    <g>
+      <rect x="70" y="420" width="170" height="40" rx="8" fill="#0C0F17" stroke="#1C2334"/>
+      <rect x="70" y="420" width="2.5" height="40" rx="1.2" fill="#6E8BFF" opacity="0.25">
+        <animate attributeName="opacity" values="0.18;0.6;0.18" dur="5s" begin="1.6s" repeatCount="indefinite"/>
+      </rect>
+      <text x="88" y="445" font-size="14" fill="#C9CFDD">同花顺</text>
+      <text x="222" y="445" text-anchor="end" font-size="9" letter-spacing="1.5" fill="#3E4558" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">05</text>
+    </g>
+  </g>
+
+  <!-- bus -->
+  <g stroke="#26304A" stroke-width="1" fill="none">
+    <path d="M240 232 H272 V284 H272 V336 H272 V388 H272 V440"/>
+    <path d="M240 284 H272"/>
+    <path d="M240 336 H272"/>
+    <path d="M240 388 H272"/>
+    <path d="M240 440 H272"/>
+    <path d="M272 336 H360"/>
+  </g>
+  <g fill="#33405F">
+    <circle cx="272" cy="232" r="2"/>
+    <circle cx="272" cy="284" r="2"/>
+    <circle cx="272" cy="336" r="2"/>
+    <circle cx="272" cy="388" r="2"/>
+    <circle cx="272" cy="440" r="2"/>
+  </g>
+
+  <g>
+    <circle r="2.6" fill="#96A8FF">
+      <animateMotion dur="3.4s" repeatCount="indefinite" path="M240 232 H272 V336 H360"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.6" fill="#96A8FF">
+      <animateMotion dur="3.4s" begin="1.1s" repeatCount="indefinite" path="M240 336 H272 V336 H360"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.4s" begin="1.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.6" fill="#96A8FF">
+      <animateMotion dur="3.4s" begin="2.2s" repeatCount="indefinite" path="M240 440 H272 V336 H360"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.85;1" dur="3.4s" begin="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- bridge server -->
+  <g>
+    <rect x="360" y="234" width="230" height="204" rx="12" fill="#0A0D15" stroke="#243052"/>
+    <rect x="360" y="234" width="3" height="204" rx="1.5" fill="#6E8BFF" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.65;0.2" dur="4.2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="384" y="268" font-size="9.5" letter-spacing="3" fill="#7D95FF" font-family="Inter, -apple-system, Arial, sans-serif">BRIDGE SERVER</text>
+    <text x="384" y="302" font-size="24" font-weight="500" fill="#E8EAF1" font-family="Inter, -apple-system, Arial, sans-serif">Browser Runtime</text>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5" fill="#8D96AA">
+      <circle cx="390" cy="328" r="2" fill="#4C5F8F"/>
+      <text x="402" y="332">real browser</text>
+      <circle cx="390" cy="354" r="2" fill="#4C5F8F"/>
+      <text x="402" y="358">stateful sessions</text>
+      <circle cx="390" cy="380" r="2" fill="#4C5F8F"/>
+      <text x="402" y="384">userscript injection</text>
+    </g>
+    <text x="384" y="420" font-size="10" letter-spacing="1" fill="#3E4558" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">ws://localhost</text>
+  </g>
+
+  <!-- cli -->
+  <g>
+    <rect x="670" y="234" width="220" height="204" rx="12" fill="#0A0D15" stroke="#243052"/>
+    <rect x="670" y="234" width="3" height="204" rx="1.5" fill="#6E8BFF" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.65;0.2" dur="4.2s" begin="0.6s" repeatCount="indefinite"/>
+    </rect>
+    <text x="694" y="268" font-size="9.5" letter-spacing="3" fill="#7D95FF" font-family="Inter, -apple-system, Arial, sans-serif">CLI</text>
+    <text x="694" y="289" font-size="11" fill="#5A6278" font-family="Inter, -apple-system, Arial, sans-serif">composable commands</text>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="12.5">
+      <text x="694" y="322"><tspan fill="#5C6FA8">$</tspan><tspan fill="#B9C0CF"> search</tspan></text>
+      <text x="694" y="348"><tspan fill="#5C6FA8">$</tspan><tspan fill="#B9C0CF"> comments --all</tspan></text>
+      <text x="694" y="374"><tspan fill="#5C6FA8">$</tspan><tspan fill="#B9C0CF"> reply --ai</tspan></text>
+      <text x="694" y="400"><tspan fill="#5C6FA8">$</tspan><tspan fill="#B9C0CF"> record | clip</tspan></text>
+    </g>
+  </g>
+
+  <!-- ai -->
+  <g>
+    <rect x="960" y="262" width="180" height="148" rx="12" fill="#0A0D15" stroke="#243052"/>
+    <rect x="960" y="262" width="3" height="148" rx="1.5" fill="#6E8BFF" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.65;0.2" dur="4.2s" begin="1.2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="984" y="294" font-size="9.5" letter-spacing="3" fill="#7D95FF" font-family="Inter, -apple-system, Arial, sans-serif">AI OPERATOR</text>
+    <text x="984" y="324" font-size="14" fill="#E8EAF1" font-family="Inter, -apple-system, Arial, sans-serif">Claude / OpenAI</text>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#6F778C">
+      <text x="984" y="350">persona</text>
+      <text x="984" y="370">intent</text>
+      <text x="984" y="390">judgment</text>
+    </g>
+    <circle cx="1118" cy="286" r="3" fill="#96A8FF">
+      <animate attributeName="opacity" values="1;0.2;1" dur="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2.4;3.4;2.4" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- flows -->
+  <g fill="none" stroke="#44506E" stroke-width="1.2">
+    <path d="M590 336 H662" stroke-dasharray="3 6" marker-end="url(#arrow)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M890 324 H952" stroke-dasharray="3 6" marker-end="url(#arrow)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M952 356 H898" stroke-dasharray="3 6" marker-end="url(#arrow)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.7s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="9" letter-spacing="1" fill="#4B5470">
+    <text x="626" y="326" text-anchor="middle">JSON</text>
+  </g>
+
+  <!-- moving packets on flows -->
+  <g>
+    <circle r="2.4" fill="#96A8FF">
+      <animateMotion dur="2.2s" repeatCount="indefinite" path="M590 336 H662"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.4" fill="#96A8FF">
+      <animateMotion dur="2.8s" repeatCount="indefinite" path="M890 324 H952"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.4" fill="#5C6FA8">
+      <animateMotion dur="3.1s" repeatCount="indefinite" path="M952 356 H898"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.82;1" dur="3.1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- state -->
+  <g>
+    <path d="M475 438 V486" stroke="#26304A" stroke-width="1" stroke-dasharray="2 5">
+      <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M780 438 V486" stroke="#26304A" stroke-width="1" stroke-dasharray="2 5">
+      <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M1050 410 V510 H900" stroke="#26304A" stroke-width="1" stroke-dasharray="2 5" fill="none" marker-end="url(#arrowSoft)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-14" dur="1.9s" repeatCount="indefinite"/>
+    </path>
+    <text x="1060" y="470" font-size="9" letter-spacing="1.2" fill="#454E68" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">MEMORY</text>
+
+    <rect x="360" y="486" width="530" height="48" rx="10" fill="#0A0D15" stroke="#20283B"/>
+    <text x="384" y="515" font-size="9.5" letter-spacing="3" fill="#7D95FF" font-family="Inter, -apple-system, Arial, sans-serif">STATE</text>
+    <text x="446" y="515" font-size="12" fill="#7C849A" font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, monospace">SQLite · sessions · drafts · corpus · memory</text>
+  </g>
+
+  <!-- footer stack -->
+  <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="10" letter-spacing="1.4" fill="#454E68">
+    <text x="70" y="582">STACK</text>
+    <text x="130" y="582">Python · JavaScript · Node.js · Shell · SQLite · ffmpeg · Claude · OpenAI</text>
+    <text x="1130" y="582" text-anchor="end">REAL BROWSERS IN → STRUCTURED SIGNALS OUT</text>
+  </g>
+</svg>

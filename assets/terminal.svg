@@ -86,7 +86,7 @@
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" begin="3.05s" dur="0.4s" fill="freeze"/>
       <text x="96" y="394" font-size="16.5">
-        <tspan fill="#D8DCE7">douyin-cli</tspan><tspan fill="#4D556C"> · </tspan><tspan fill="#D8DCE7">douyin-living</tspan><tspan fill="#4D556C"> · </tspan><tspan fill="#D8DCE7">xiaohongshu-cli</tspan><tspan fill="#4D556C"> · </tspan><tspan fill="#D8DCE7">BossZhipin-cli</tspan><tspan fill="#4D556C"> · </tspan><tspan fill="#D8DCE7">ths-cli</tspan>
+        <tspan fill="#D8DCE7">douyin-cli</tspan><tspan fill="#4D556C"> · </tspan><tspan fill="#D8DCE7">douyin-living</tspan><tspan fill="#4D556C"> · </tspan><tspan fill="#D8DCE7">tiktok-cli</tspan><tspan fill="#4D556C"> · </tspan><tspan fill="#D8DCE7">xiaohongshu-cli</tspan><tspan fill="#4D556C"> · </tspan><tspan fill="#D8DCE7">BossZhipin-cli</tspan><tspan fill="#4D556C"> · </tspan><tspan fill="#D8DCE7">ths-cli</tspan>
       </text>
     </g>
 
