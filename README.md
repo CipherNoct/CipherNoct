@@ -1,55 +1,51 @@
 <div align="center">
-
-<h1>CipherNoct</h1>
-
-**Turn platforms into command lines.<br/>Let AI be the operator.**
-
-把平台变成命令行，让 AI 成为操作员。
-
-<sub>独立开发者 · 构建 AI 原生的自动化工具集</sub>
-
+  <img src="./assets/hero.svg" width="100%" alt="CipherNoct — Turn platforms into command lines. Let AI be the operator." />
 </div>
 
----
+<div align="center">
+  <img src="./assets/terminal.svg" width="100%" alt="Terminal: whoami, bridge --status, ls ~/projects" />
+</div>
 
-## 关于
+## 我在做什么
 
-我专注于一件事：**把人们每天手动重复的平台操作，变成可以被脚本编排、被 AI 接管的命令行工具。**
+**把重复的平台操作，变成可编排的命令行。**
 
-以自研的 **Bridge Framework** 为底座 —— Bridge Server 驱动真实浏览器，配合脚本注入与状态化 CLI —— 为内容、社交与招聘平台构建了一整套可组合的自动化工具。
+不是爬虫，也不止是给平台套一层 AI。自研 **Bridge Framework** 驱动真实浏览器，让脚本拥有状态、让 AI 拥有手 —— 搜索、浏览、发布、回复、录制、剪辑，都能在终端里完成。
 
-它们不依赖脆弱的私有接口，也不会因为一次前端改版就全部失效。
-
-> 真实浏览器 · 可编程 · AI 原生
+从抖音评论运营，到直播高光自动切片，再到让 Agent 拥有跨项目的记忆。工具应该比它操作的平台活得更久。
 
 ## 代表项目
 
 | 项目 | 简介 | ★ |
 |:--|:--|--:|
-| **[douyin-cli](https://github.com/CipherNoct/douyin-cli)** | 抖音评论运营 CLI —— 全量评论抓取、AI 人格化回复、草稿管理与风控断路器 | [![stars](https://img.shields.io/github/stars/CipherNoct/douyin-cli?style=flat-square&label=%E2%98%85&color=111111&labelColor=eaeaea)](https://github.com/CipherNoct/douyin-cli) |
-| **[douyin-living](https://github.com/CipherNoct/douyin-living)** | 抖音直播全自动录制 + 多模态 AI 切片 —— 录制、弹幕、ASR、信号融合、高光剪辑 | [![stars](https://img.shields.io/github/stars/CipherNoct/douyin-living?style=flat-square&label=%E2%98%85&color=111111&labelColor=eaeaea)](https://github.com/CipherNoct/douyin-living) |
-| **[xiaohongshu-cli](https://github.com/CipherNoct/xiaohongshu-cli)** | 小红书全自动管理 CLI —— 搜索、全量评论、AI 智能回复与运营仪表盘 | [![stars](https://img.shields.io/github/stars/CipherNoct/xiaohongshu-cli?style=flat-square&label=%E2%98%85&color=111111&labelColor=eaeaea)](https://github.com/CipherNoct/xiaohongshu-cli) |
-| **[BossZhipin-cli](https://github.com/CipherNoct/BossZhipin-cli)** | BOSS 直聘命令行工具 —— 职位搜索、智能匹配评分、LLM 批量打招呼，终端即操控台 | [![stars](https://img.shields.io/github/stars/CipherNoct/BossZhipin-cli?style=flat-square&label=%E2%98%85&color=111111&labelColor=eaeaea)](https://github.com/CipherNoct/BossZhipin-cli) |
-| **[my-claude-memory](https://github.com/CipherNoct/my-claude-memory)** | 为 Claude Code 等 Agent 打造的分层记忆系统，跨会话、跨项目、跨机器共享知识 | [![stars](https://img.shields.io/github/stars/CipherNoct/my-claude-memory?style=flat-square&label=%E2%98%85&color=111111&labelColor=eaeaea)](https://github.com/CipherNoct/my-claude-memory) |
+| **[douyin-cli](https://github.com/CipherNoct/douyin-cli)** | 抖音评论运营 CLI —— 全量评论、AI 人格化回复、草稿管理与风控 | [![stars](https://img.shields.io/github/stars/CipherNoct/douyin-cli?style=flat-square&label=%E2%98%85&color=6E8BFF&labelColor=141926)](https://github.com/CipherNoct/douyin-cli) |
+| **[douyin-living](https://github.com/CipherNoct/douyin-living)** | 直播全自动录制 + 多模态 AI 切片 —— 录制 → 弹幕 → ASR → 高光 | [![stars](https://img.shields.io/github/stars/CipherNoct/douyin-living?style=flat-square&label=%E2%98%85&color=6E8BFF&labelColor=141926)](https://github.com/CipherNoct/douyin-living) |
+| **[xiaohongshu-cli](https://github.com/CipherNoct/xiaohongshu-cli)** | 小红书全自动管理 —— 搜索、全量评论、AI 智能回复、运营仪表盘 | [![stars](https://img.shields.io/github/stars/CipherNoct/xiaohongshu-cli?style=flat-square&label=%E2%98%85&color=6E8BFF&labelColor=141926)](https://github.com/CipherNoct/xiaohongshu-cli) |
+| **[BossZhipin-cli](https://github.com/CipherNoct/BossZhipin-cli)** | BOSS 直聘命令行工具 —— 智能匹配、LLM 打招呼、17 条命令 | [![stars](https://img.shields.io/github/stars/CipherNoct/BossZhipin-cli?style=flat-square&label=%E2%98%85&color=6E8BFF&labelColor=141926)](https://github.com/CipherNoct/BossZhipin-cli) |
+| **[my-claude-memory](https://github.com/CipherNoct/my-claude-memory)** | Agent 分层记忆 —— 跨会话、跨项目、跨机器共享上下文 | [![stars](https://img.shields.io/github/stars/CipherNoct/my-claude-memory?style=flat-square&label=%E2%98%85&color=6E8BFF&labelColor=141926)](https://github.com/CipherNoct/my-claude-memory) |
 
-<sub>更多：[tiktok-cli](https://github.com/CipherNoct/tiktok-cli) · [ths-cli](https://github.com/CipherNoct/ths-cli) · [markdown-to](https://github.com/CipherNoct/markdown-to)</sub>
+<sub>还有：[tiktok-cli](https://github.com/CipherNoct/tiktok-cli) · [ths-cli](https://github.com/CipherNoct/ths-cli) · [markdown-to](https://github.com/CipherNoct/markdown-to)</sub>
 
-## 技术栈
+## 正在构建
 
-`Python` · `JavaScript` · `Node.js` · `Shell` · `SQLite` · `ffmpeg` · `Claude` · `OpenAI` · `Browser Automation`
+| 层 | 内容 |
+|:--|:--|
+| **Runtime** | Bridge Framework —— 真实浏览器上的可编程运行时，已支撑 6 个平台工具 |
+| **Intelligence** | LLM 人格化回复、多模态高光判断、ASR 信号融合 |
+| **Memory** | my-claude-memory —— 让 Agent 跨会话、跨项目、跨机器记住上下文 |
 
-## 理念
+## 工作方式
 
-**真实优先** —— 用真实浏览器与真实行为，换取工具的长期可用性。
+**01 / 真实优先** —— 真实浏览器与真实行为，换取长期可用性。
 
-**AI 是操作员** —— 不止生成文案，而是理解上下文、执行完整流程。
+**02 / AI 是操作员** —— 不止生成文案，而是跑完整个流程。
 
-**工具即积木** —— 每个 CLI 都能独立使用，也能被其他程序与 Agent 编排。
+**03 / 工具即积木** —— 单用是 CLI，组合起来是系统。
 
 ---
 
 <div align="center">
-
-<sub>Build things that outlive their interfaces.</sub>
-
+<sub>BUILD THINGS THAT OUTLIVE THEIR INTERFACES.</sub>
+<br/><br/>
+<a href="https://github.com/CipherNoct">github.com/CipherNoct</a>
 </div>
