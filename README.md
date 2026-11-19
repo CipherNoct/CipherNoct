@@ -83,6 +83,16 @@
 
 </details>
 
+## 案例 · Case Study
+
+以 **douyin-living** 为例：一条直播流进来，经过录制、听写、多模态融合打分，最后只留下值得看的那几十秒。
+
+<div align="center">
+  <img src="./assets/pipeline.svg" width="100%" alt="Live → Highlight pipeline: capture, listen, fuse, rank and cut" />
+</div>
+
+<p align="center"><sub>3 层 AI + 7 项信号融合 · 支持两阶段召回/精排与自包含 HTML 审核报告 · <a href="https://github.com/CipherNoct/douyin-living">查看实现 →</a></sub></p>
+
 <div align="center">
   <img src="./assets/divider.svg" width="100%" alt="" />
 </div>
