@@ -90,12 +90,12 @@
 ## 信号 · Signal
 
 <p align="center">
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=CipherNoct&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;hide_border=true&amp;bg_color=0A0C12&amp;title_color=96A8FF&amp;text_color=9099AD&amp;icon_color=6E8BFF&amp;rank_icon=github&amp;custom_title=CIPHERNOCT%20%2F%20GITHUB" alt="CipherNoct's GitHub stats" />
-  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=CipherNoct&amp;layout=compact&amp;langs_count=6&amp;hide_border=true&amp;bg_color=0A0C12&amp;title_color=96A8FF&amp;text_color=9099AD&amp;custom_title=STACK%20%2F%20BY%20CODE" alt="Top languages" />
+  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=CipherNoct&amp;show_icons=true&amp;hide_border=true&amp;bg_color=0A0C12&amp;title_color=96A8FF&amp;text_color=9099AD&amp;icon_color=6E8BFF&amp;rank_icon=github&amp;custom_title=CIPHERNOCT%20%2F%20GITHUB" alt="CipherNoct's GitHub stats" />
+  <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=CipherNoct&amp;langs_count=6&amp;hide_border=true&amp;bg_color=0A0C12&amp;title_color=96A8FF&amp;text_color=9099AD&amp;custom_title=STACK%20%2F%20BY%20CODE" alt="Top languages" />
 </p>
 
 <p align="center">
-  <img width="62%" src="https://streak-stats.demolab.com?user=CipherNoct&amp;hide_border=true&amp;background=0A0C12&amp;stroke=1E2434&amp;ring=6E8BFF&amp;fire=96A8FF&amp;currStreakNum=EDEFF5&amp;sideNums=EDEFF5&amp;currStreakLabel=96A8FF&amp;sideLabels=9099AD&amp;dates=565E74" alt="GitHub streak" />
+  <img width="495" src="https://streak-stats.demolab.com?user=CipherNoct&amp;hide_border=true&amp;background=0A0C12&amp;stroke=1E2434&amp;ring=6E8BFF&amp;fire=96A8FF&amp;currStreakNum=EDEFF5&amp;sideNums=EDEFF5&amp;currStreakLabel=96A8FF&amp;sideLabels=9099AD&amp;dates=565E74" alt="GitHub streak" />
 </p>
 
 <p align="center">
