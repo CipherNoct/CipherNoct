@@ -1,15 +1,15 @@
 <div align="center">
-  <img src="./assets/hero.svg" width="100%" alt="CipherNoct — Turn platforms into command lines. Let AI be the operator." />
+  <img src="./assets/hero.svg?v=2" width="100%" alt="CipherNoct — Turn platforms into command lines. Let AI be the operator." />
 </div>
 
 <div align="center">
-  <img src="./assets/terminal.svg" width="100%" alt="Terminal: whoami, bridge --status, ls ~/projects" />
+  <img src="./assets/terminal.svg?v=2" width="100%" alt="Terminal: whoami, bridge --status, ls ~/projects" />
 </div>
 
 <table>
 <tr>
 <td width="235" valign="top">
-  <img src="./assets/portrait.svg" width="210" alt="CipherNoct" />
+  <img src="./assets/portrait.svg?v=2" width="210" alt="CipherNoct" />
 </td>
 <td valign="top">
   <h3>独立开发者 · 构建 AI 原生的自动化工具集</h3>
@@ -25,7 +25,7 @@
 > **Belief** — tools should outlive the interfaces they operate.
 
 <div align="center">
-  <img src="./assets/divider.svg" width="100%" alt="" />
+  <img src="./assets/divider.svg?v=2" width="100%" alt="" />
 </div>
 
 ## 系统 · System
@@ -33,7 +33,7 @@
 所有工具共享同一套运行时：**真实浏览器 → Bridge Server → CLI → AI**。平台只是入口，AI 才是操作员。
 
 <div align="center">
-  <img src="./assets/architecture.svg" width="100%" alt="Bridge Framework: real platforms feed a stateful browser runtime, composable CLI commands and an AI operator, backed by persistent state and memory." />
+  <img src="./assets/architecture.svg?v=2" width="100%" alt="Bridge Framework: real platforms feed a stateful browser runtime, composable CLI commands and an AI operator, backed by persistent state and memory." />
 </div>
 
 ## 代表项目 · Selected Work
@@ -88,13 +88,13 @@
 以 **douyin-living** 为例：一条直播流进来，经过录制、听写、多模态融合打分，最后只留下值得看的那几十秒。
 
 <div align="center">
-  <img src="./assets/pipeline.svg" width="100%" alt="Live → Highlight pipeline: capture, listen, fuse, rank and cut" />
+  <img src="./assets/pipeline.svg?v=2" width="100%" alt="Live → Highlight pipeline: capture, listen, fuse, rank and cut" />
 </div>
 
 <p align="center"><sub>3 层 AI + 7 项信号融合 · 支持两阶段召回/精排与自包含 HTML 审核报告 · <a href="https://github.com/CipherNoct/douyin-living">查看实现 →</a></sub></p>
 
 <div align="center">
-  <img src="./assets/divider.svg" width="100%" alt="" />
+  <img src="./assets/divider.svg?v=2" width="100%" alt="" />
 </div>
 
 ## 信号 · Signal
@@ -138,7 +138,7 @@
 **03 / 工具即积木** —— 单用是 CLI，组合起来是系统。
 
 <div align="center">
-  <img src="./assets/divider.svg" width="100%" alt="" />
+  <img src="./assets/divider.svg?v=2" width="100%" alt="" />
 </div>
 
 <div align="center">

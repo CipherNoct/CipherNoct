@@ -4,250 +4,528 @@
 
   <defs>
     <linearGradient id="pbg" x1="0" y1="0" x2="1200" y2="560" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#07080C"/>
-      <stop offset="0.55" stop-color="#090B11"/>
-      <stop offset="1" stop-color="#07080C"/>
+      <stop offset="0" stop-color="#05060A"/>
+      <stop offset="0.5" stop-color="#080A11"/>
+      <stop offset="1" stop-color="#05060A"/>
     </linearGradient>
-    <radialGradient id="pglow" cx="600" cy="280" r="520" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#5B7CFA" stop-opacity="0.08"/>
-      <stop offset="1" stop-color="#5B7CFA" stop-opacity="0"/>
+    <radialGradient id="pglow" cx="600" cy="280" r="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4E6DF5" stop-opacity="0.10"/>
+      <stop offset="0.6" stop-color="#4E6DF5" stop-opacity="0.02"/>
+      <stop offset="1" stop-color="#4E6DF5" stop-opacity="0"/>
     </radialGradient>
-    <pattern id="pdots" width="28" height="28" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#2A3044"/>
-    </pattern>
+    <radialGradient id="pglowB" cx="1020" cy="470" r="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7B5CFF" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#7B5CFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pvignette" cx="600" cy="280" r="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0.5" stop-color="#05060A" stop-opacity="0"/>
+      <stop offset="1" stop-color="#05060A" stop-opacity="0.82"/>
+    </radialGradient>
+
+    <linearGradient id="cardFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0D111B"/>
+      <stop offset="1" stop-color="#080B12"/>
+    </linearGradient>
+    <linearGradient id="panelFill" x1="50" y1="392" x2="1150" y2="510" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B0F18"/>
+      <stop offset="0.55" stop-color="#090C14"/>
+      <stop offset="1" stop-color="#080B12"/>
+    </linearGradient>
     <linearGradient id="curveStroke" x1="72" y1="0" x2="1128" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#44506E"/>
       <stop offset="0.55" stop-color="#6E8BFF"/>
-      <stop offset="1" stop-color="#96A8FF"/>
+      <stop offset="1" stop-color="#B9C8FF"/>
     </linearGradient>
     <linearGradient id="curveFill" x1="0" y1="400" x2="0" y2="500" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#6E8BFF" stop-opacity="0.2"/>
+      <stop offset="0" stop-color="#6E8BFF" stop-opacity="0.22"/>
       <stop offset="1" stop-color="#6E8BFF" stop-opacity="0"/>
     </linearGradient>
+    <linearGradient id="waveGrad" x1="294" y1="0" x2="454" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6E8BFF" stop-opacity="0"/>
+      <stop offset="0.35" stop-color="#8FA6FF" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="0.75" stop-color="#8FA6FF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#6E8BFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="captureScan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6E8BFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#C9D2FF" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#6E8BFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="panelScan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6E8BFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#C9D2FF" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#6E8BFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="pdots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#2A3044"/>
+    </pattern>
+
+    <clipPath id="panelClip"><rect x="50" y="392" width="1100" height="118" rx="12"/></clipPath>
+
     <marker id="parrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M0 0 L8 4 L0 8 Z" fill="#5C6FA8"/>
     </marker>
+    <filter id="packetGlow" x="-160%" y="-160%" width="420%" height="420%">
+      <feGaussianBlur stdDeviation="2.4"/>
+    </filter>
+    <filter id="curveGlow" x="-10%" y="-40%" width="120%" height="180%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
   </defs>
 
   <rect width="1200" height="560" fill="url(#pbg)"/>
+  <ellipse cx="600" cy="280" rx="520" ry="300" fill="url(#pglow)">
+    <animateTransform attributeName="transform" type="translate" values="0 0;24 -12;0 0" dur="24s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1" keyTimes="0;0.5;1"/>
+  </ellipse>
+  <ellipse cx="1020" cy="470" rx="330" ry="210" fill="url(#pglowB)">
+    <animateTransform attributeName="transform" type="translate" values="0 0;-18 8;0 0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1" keyTimes="0;0.5;1"/>
+  </ellipse>
   <rect width="1200" height="560" fill="url(#pdots)" opacity="0.14"/>
-  <rect width="1200" height="560" fill="url(#pglow)"/>
 
-  <g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <g fill="#A9B8FF">
+    <circle cx="120" cy="480" r="1"><animate attributeName="opacity" values="0.05;0.32;0.05" dur="9s" repeatCount="indefinite"/></circle>
+    <circle cx="330" cy="500" r="0.9"><animate attributeName="opacity" values="0.04;0.28;0.04" dur="11s" begin="1.6s" repeatCount="indefinite"/></circle>
+    <circle cx="760" cy="150" r="1.1"><animate attributeName="opacity" values="0.05;0.3;0.05" dur="10s" begin="0.8s" repeatCount="indefinite"/></circle>
+    <circle cx="1090" cy="140" r="0.9"><animate attributeName="opacity" values="0.04;0.26;0.04" dur="12s" begin="2.4s" repeatCount="indefinite"/></circle>
+    <circle cx="1160" cy="360" r="1"><animate attributeName="opacity" values="0.05;0.3;0.05" dur="9.5s" begin="3.2s" repeatCount="indefinite"/></circle>
+    <circle cx="40" cy="300" r="0.8"><animate attributeName="opacity" values="0.04;0.24;0.04" dur="10.5s" begin="1.2s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <rect width="1200" height="560" fill="url(#pvignette)"/>
+
+  <g font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="0.12s" dur="0.8s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="translate" from="0 6" to="0 0" begin="0.12s" dur="0.9s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 1 0.36 1"/>
     <text x="50" y="62" font-size="10" letter-spacing="4" fill="#5F78D8">03 / CASE STUDY</text>
     <text x="50" y="104" font-size="34" font-weight="500" letter-spacing="1" fill="#E8EAF1">Live → Highlight</text>
     <text x="50" y="132" font-size="12.5" letter-spacing="0.5" fill="#7C849A">一条直播流的完整旅程：录制 · 听写 · 融合 · 定位 · 成片。</text>
-    <circle cx="1004" cy="58" r="3" fill="#6E8BFF">
+    <circle cx="1022" cy="58" r="3" fill="#6E8BFF">
       <animate attributeName="opacity" values="1;0.2;1" dur="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="2.4;3.5;2.4" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1022" cy="58" r="7" fill="none" stroke="#6E8BFF" stroke-width="0.7" opacity="0">
+      <animate attributeName="r" values="4;12" dur="3.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0" dur="3.4s" repeatCount="indefinite"/>
     </circle>
     <text x="1150" y="62" text-anchor="end" font-size="9.5" letter-spacing="2.5" fill="#4F5870">DOUYIN-LIVING</text>
   </g>
 
   <!-- stage cards -->
-  <g>
-    <!-- 01 capture -->
-    <g>
-      <rect x="50" y="170" width="196" height="190" rx="10" fill="#0A0D15" stroke="#1E2638"/>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0.45s" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="0.45s" dur="0.75s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 1 0.36 1"/>
+      <rect x="50" y="170" width="196" height="190" rx="10" fill="url(#cardFill)" stroke="#1E2638"/>
+      <rect x="50" y="170" width="196" height="1" rx="0.5" fill="#8FA6FF" opacity="0.14"/>
+      <rect x="50" y="170" width="196" height="190" rx="10" fill="none" stroke="#6E8BFF" opacity="0">
+        <animate attributeName="opacity" values="0;0.4;0" keyTimes="0;0.16;0.42" dur="5.6s" begin="0.00s" repeatCount="indefinite" calcMode="spline" keySplines="0.2 0.6 0.3 1;0.4 0 0.6 1"/>
+      </rect>
       <rect x="50" y="170" width="2.5" height="190" rx="1.2" fill="#6E8BFF" opacity="0.3">
-        <animate attributeName="opacity" values="0.2;0.65;0.2" dur="4.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.2;0.68;0.2" dur="4.4s" begin="0.00s" repeatCount="indefinite"/>
       </rect>
       <text x="68" y="202" font-size="9" letter-spacing="2.5" fill="#4F5870" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">01</text>
       <text x="68" y="226" font-size="12.5" letter-spacing="2.2" fill="#D8DCE7">CAPTURE</text>
       <line x1="68" y1="240" x2="228" y2="240" stroke="#1A2030"/>
+      <line x1="68" y1="240.5" x2="228" y2="240.5" stroke="#6E8BFF" opacity="0.12"/>
+      <g>
+        <rect x="68" y="298" width="4" height="10" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="10;22;10" dur="2.0s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="298;286;298" dur="2.0s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="82" y="290" width="4" height="18" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="18;30;18" dur="2.35s" begin="0.23s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="290;278;290" dur="2.35s" begin="0.23s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="96" y="282" width="4" height="26" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="26;16;26" dur="2.7s" begin="0.46s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="282;292;282" dur="2.7s" begin="0.46s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="110" y="294" width="4" height="14" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="14;28;14" dur="3.05s" begin="0.6900000000000001s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="294;280;294" dur="3.05s" begin="0.6900000000000001s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="124" y="278" width="4" height="30" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="30;12;30" dur="3.4s" begin="0.92s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="278;296;278" dur="3.4s" begin="0.92s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="138" y="286" width="4" height="22" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="22;32;22" dur="2.0s" begin="1.1500000000000001s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="286;276;286" dur="2.0s" begin="1.1500000000000001s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="152" y="296" width="4" height="12" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="12;24;12" dur="2.35s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="296;284;296" dur="2.35s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="166" y="282" width="4" height="26" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="26;18;26" dur="2.7s" begin="0.23s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="282;290;282" dur="2.7s" begin="0.23s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="180" y="290" width="4" height="18" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="18;32;18" dur="3.05s" begin="0.46s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="290;276;290" dur="3.05s" begin="0.46s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="194" y="278" width="4" height="30" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="30;20;30" dur="3.4s" begin="0.6900000000000001s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="278;288;278" dur="3.4s" begin="0.6900000000000001s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="208" y="296" width="4" height="12" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="12;18;12" dur="2.0s" begin="0.92s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="296;290;296" dur="2.0s" begin="0.92s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="222" y="300" width="4" height="8" rx="2" fill="#2A3350" opacity="1.0">
+          <animate attributeName="height" values="8;14;8" dur="2.35s" begin="1.1500000000000001s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="300;294;300" dur="2.35s" begin="1.1500000000000001s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="96" y="292" width="4" height="16" rx="2" fill="#6E8BFF" opacity="0.65">
+          <animate attributeName="height" values="16;8;16" dur="3.2s" begin="0.7s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="292;300;292" dur="3.2s" begin="0.7s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="138" y="296" width="4" height="12" rx="2" fill="#6E8BFF" opacity="0.65">
+          <animate attributeName="height" values="12;24;12" dur="2.8s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="296;284;296" dur="2.8s" begin="0.0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="194" y="288" width="4" height="20" rx="2" fill="#6E8BFF" opacity="0.65">
+          <animate attributeName="height" values="20;12;20" dur="2.8s" begin="1.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+          <animate attributeName="y" values="288;296;288" dur="2.8s" begin="1.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+        </rect>
+        <rect x="68" y="250" width="1" height="58" fill="url(#captureScan)" opacity="0.5">
+          <animate attributeName="x" values="68;224" dur="4.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.6 1"/>
+          <animate attributeName="opacity" values="0;0.6;0.6;0" keyTimes="0;0.1;0.85;1" dur="4.6s" repeatCount="indefinite"/>
+        </rect>
+      </g>
       <circle cx="228" cy="260" r="2.6" fill="#96A8FF">
         <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
       </circle>
-      <g fill="#2A3350">
-        <rect x="68"  y="298" width="4" height="10" rx="2"/>
-        <rect x="82"  y="290" width="4" height="18" rx="2"/>
-        <rect x="96"  y="282" width="4" height="26" rx="2"/>
-        <rect x="110" y="294" width="4" height="14" rx="2"/>
-        <rect x="124" y="278" width="4" height="30" rx="2"/>
-        <rect x="138" y="286" width="4" height="22" rx="2"/>
-        <rect x="152" y="296" width="4" height="12" rx="2"/>
-        <rect x="166" y="282" width="4" height="26" rx="2"/>
-        <rect x="180" y="290" width="4" height="18" rx="2"/>
-        <rect x="194" y="278" width="4" height="30" rx="2"/>
-        <rect x="208" y="296" width="4" height="12" rx="2"/>
-        <rect x="222" y="300" width="4" height="8" rx="2"/>
-      </g>
-      <g fill="#6E8BFF">
-        <rect x="96" y="282" width="4" height="26" rx="2" opacity="0.6">
-          <animate attributeName="opacity" values="0.3;1;0.3" dur="2.4s" repeatCount="indefinite"/>
-        </rect>
-        <rect x="138" y="286" width="4" height="22" rx="2" opacity="0.6">
-          <animate attributeName="opacity" values="0.3;1;0.3" dur="2.8s" begin="0.5s" repeatCount="indefinite"/>
-        </rect>
-        <rect x="194" y="278" width="4" height="30" rx="2" opacity="0.6">
-          <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" begin="1s" repeatCount="indefinite"/>
-        </rect>
-      </g>
+      <circle cx="228" cy="260" r="4" fill="none" stroke="#96A8FF" stroke-width="0.7" opacity="0">
+        <animate attributeName="r" values="4;11" dur="2.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0" dur="2.6s" repeatCount="indefinite"/>
+      </circle>
+
       <text x="68" y="336" font-size="11" fill="#6F778C" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">FLV 4K + AAC</text>
       <text x="68" y="352" font-size="11" fill="#6F778C" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">danmaku WebSocket</text>
     </g>
-
-    <!-- 02 listen -->
-    <g>
-      <rect x="276" y="170" width="196" height="190" rx="10" fill="#0A0D15" stroke="#1E2638"/>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0.57s" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="0.57s" dur="0.75s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 1 0.36 1"/>
+      <rect x="276" y="170" width="196" height="190" rx="10" fill="url(#cardFill)" stroke="#1E2638"/>
+      <rect x="276" y="170" width="196" height="1" rx="0.5" fill="#8FA6FF" opacity="0.14"/>
+      <rect x="276" y="170" width="196" height="190" rx="10" fill="none" stroke="#6E8BFF" opacity="0">
+        <animate attributeName="opacity" values="0;0.4;0" keyTimes="0;0.16;0.42" dur="5.6s" begin="1.10s" repeatCount="indefinite" calcMode="spline" keySplines="0.2 0.6 0.3 1;0.4 0 0.6 1"/>
+      </rect>
       <rect x="276" y="170" width="2.5" height="190" rx="1.2" fill="#6E8BFF" opacity="0.3">
-        <animate attributeName="opacity" values="0.2;0.65;0.2" dur="4.4s" begin="0.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.2;0.68;0.2" dur="4.4s" begin="0.40s" repeatCount="indefinite"/>
       </rect>
       <text x="294" y="202" font-size="9" letter-spacing="2.5" fill="#4F5870" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">02</text>
       <text x="294" y="226" font-size="12.5" letter-spacing="2.2" fill="#D8DCE7">LISTEN</text>
       <line x1="294" y1="240" x2="454" y2="240" stroke="#1A2030"/>
-      <path d="M294 268 L306 262 L318 274 L330 266 L342 278 L354 264 L366 272 L378 258 L390 276 L402 266 L414 270 L426 260 L438 272 L450 264 L454 268" fill="none" stroke="#44506E" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="294" y1="240.5" x2="454" y2="240.5" stroke="#6E8BFF" opacity="0.12"/>
+      <path d="M294 268 L306 262 L318 274 L330 266 L342 278 L354 264 L366 272 L378 258 L390 276 L402 266 L414 270 L426 260 L438 272 L450 264 L454 268" fill="none" stroke="#38445F" stroke-width="1.2" stroke-linecap="round"/>
+      <path d="M294 268 L306 262 L318 274 L330 266 L342 278 L354 264 L366 272 L378 258 L390 276 L402 266 L414 270 L426 260 L438 272 L450 264 L454 268" fill="none" stroke="url(#waveGrad)" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="56 420" opacity="0.9">
+        <animate attributeName="stroke-dashoffset" from="0" to="-476" dur="4.2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.6 1"/>
+      </path>
       <rect x="294" y="286" width="150" height="5" rx="2.5" fill="#2A3350">
+        <animate attributeName="width" values="150;158;150" dur="3.4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
         <animate attributeName="opacity" values="0.35;1;0.35" dur="3s" repeatCount="indefinite"/>
       </rect>
-      <rect x="294" y="298" width="118" height="5" rx="2.5" fill="#6E8BFF" opacity="0.45">
+      <rect x="294" y="298" width="118" height="5" rx="2.5" fill="#6E8BFF" opacity="0.55">
+        <animate attributeName="width" values="118;130;118" dur="3.4s" begin="0.3s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
         <animate attributeName="opacity" values="0.25;0.9;0.25" dur="3s" begin="0.5s" repeatCount="indefinite"/>
       </rect>
       <rect x="294" y="310" width="90" height="5" rx="2.5" fill="#2A3350">
+        <animate attributeName="width" values="90;102;90" dur="3.4s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
         <animate attributeName="opacity" values="0.35;1;0.35" dur="3s" begin="1s" repeatCount="indefinite"/>
       </rect>
+      <circle cx="454" cy="260" r="2" fill="#6E8BFF">
+        <animate attributeName="opacity" values="1;0.2;1" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+
       <text x="294" y="336" font-size="11" fill="#6F778C" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">faster-whisper</text>
       <text x="294" y="352" font-size="11" fill="#6F778C" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">WhisperX · speaker turns</text>
     </g>
-
-    <!-- 03 fuse -->
-    <g>
-      <rect x="502" y="170" width="196" height="190" rx="10" fill="#0A0D15" stroke="#1E2638"/>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0.69s" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="0.69s" dur="0.75s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 1 0.36 1"/>
+      <rect x="502" y="170" width="196" height="190" rx="10" fill="url(#cardFill)" stroke="#1E2638"/>
+      <rect x="502" y="170" width="196" height="1" rx="0.5" fill="#8FA6FF" opacity="0.14"/>
+      <rect x="502" y="170" width="196" height="190" rx="10" fill="none" stroke="#6E8BFF" opacity="0">
+        <animate attributeName="opacity" values="0;0.4;0" keyTimes="0;0.16;0.42" dur="5.6s" begin="2.20s" repeatCount="indefinite" calcMode="spline" keySplines="0.2 0.6 0.3 1;0.4 0 0.6 1"/>
+      </rect>
       <rect x="502" y="170" width="2.5" height="190" rx="1.2" fill="#6E8BFF" opacity="0.3">
-        <animate attributeName="opacity" values="0.2;0.65;0.2" dur="4.4s" begin="0.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.2;0.68;0.2" dur="4.4s" begin="0.80s" repeatCount="indefinite"/>
       </rect>
       <text x="520" y="202" font-size="9" letter-spacing="2.5" fill="#4F5870" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">03</text>
       <text x="520" y="226" font-size="12.5" letter-spacing="2.2" fill="#D8DCE7">FUSE</text>
       <line x1="520" y1="240" x2="680" y2="240" stroke="#1A2030"/>
+      <line x1="520" y1="240.5" x2="680" y2="240.5" stroke="#6E8BFF" opacity="0.12"/>
       <g fill="none" stroke="#44506E" stroke-width="1.2">
-        <path d="M520 268 L588 290"/>
-        <path d="M520 290 L588 290"/>
-        <path d="M520 312 L588 290"/>
+        <path d="M520 268 L588 290"/><path d="M520 290 L588 290"/><path d="M520 312 L588 290"/>
       </g>
-      <circle cx="588" cy="290" r="3" fill="#6E8BFF">
-        <animate attributeName="opacity" values="1;0.35;1" dur="2.4s" repeatCount="indefinite"/>
+      <circle r="2.2" fill="#96A8FF">
+        <animateMotion dur="1.7s" repeatCount="indefinite" path="M520 268 L588 290"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.86;1" dur="1.7s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2.2" fill="#96A8FF">
+        <animateMotion dur="1.7s" begin="0.45s" repeatCount="indefinite" path="M520 290 L588 290"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.86;1" dur="1.7s" begin="0.45s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2.2" fill="#96A8FF">
+        <animateMotion dur="1.7s" begin="0.9s" repeatCount="indefinite" path="M520 312 L588 290"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.86;1" dur="1.7s" begin="0.9s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="588" cy="290" r="8" fill="none" stroke="#6E8BFF" stroke-width="0.8" opacity="0">
+        <animate attributeName="r" values="5;16" dur="2.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0" dur="2.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="588" cy="290" r="4" fill="#6E8BFF" opacity="0.9">
+        <animate attributeName="r" values="3.2;4.4;3.2" dur="2.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="588" cy="290" r="9" fill="none" stroke="#8FA6FF" stroke-width="0.6" stroke-dasharray="2 4" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="0 588 290" to="360 588 290" dur="12s" repeatCount="indefinite"/>
       </circle>
       <path d="M588 290 L680 290" stroke="#6E8BFF" stroke-width="1.4" stroke-dasharray="3 5">
         <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.2s" repeatCount="indefinite"/>
       </path>
-      <circle r="2.6" fill="#96A8FF">
-        <animateMotion dur="1.6s" repeatCount="indefinite" path="M588 290 H680"/>
-        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.8;1" dur="1.6s" repeatCount="indefinite"/>
+    <g>
+      <circle r="3.80" fill="#96A8FF" opacity="0.2" filter="url(#packetGlow)">
+        <animateMotion dur="1.9s" begin="1.20s" repeatCount="indefinite" path="M588 290 H680"/>
+        <animate attributeName="opacity" values="0;0.55;0.55;0" keyTimes="0;0.1;0.84;1" dur="1.9s" begin="1.20s" repeatCount="indefinite"/>
       </circle>
+      <circle r="2.6" fill="#C9D2FF">
+        <animateMotion dur="1.9s" begin="1.20s" repeatCount="indefinite" path="M588 290 H680"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="1.9s" begin="1.20s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="1.72" fill="#96A8FF" opacity="0.5">
+        <animateMotion dur="1.9s" begin="1.27s" repeatCount="indefinite" path="M588 290 H680"/>
+        <animate attributeName="opacity" values="0;0.6;0.6;0" keyTimes="0;0.1;0.84;1" dur="1.9s" begin="1.27s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="1.09" fill="#96A8FF" opacity="0.35">
+        <animateMotion dur="1.9s" begin="1.34s" repeatCount="indefinite" path="M588 290 H680"/>
+        <animate attributeName="opacity" values="0;0.4;0.4;0" keyTimes="0;0.1;0.84;1" dur="1.9s" begin="1.34s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
       <text x="520" y="336" font-size="11" fill="#6F778C" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">3-layer AI</text>
       <text x="520" y="352" font-size="11" fill="#6F778C" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">7 signal methods</text>
     </g>
-
-    <!-- 04 rank -->
-    <g>
-      <rect x="728" y="170" width="196" height="190" rx="10" fill="#0A0D15" stroke="#1E2638"/>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0.81s" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="0.81s" dur="0.75s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 1 0.36 1"/>
+      <rect x="728" y="170" width="196" height="190" rx="10" fill="url(#cardFill)" stroke="#1E2638"/>
+      <rect x="728" y="170" width="196" height="1" rx="0.5" fill="#8FA6FF" opacity="0.14"/>
+      <rect x="728" y="170" width="196" height="190" rx="10" fill="none" stroke="#6E8BFF" opacity="0">
+        <animate attributeName="opacity" values="0;0.4;0" keyTimes="0;0.16;0.42" dur="5.6s" begin="3.30s" repeatCount="indefinite" calcMode="spline" keySplines="0.2 0.6 0.3 1;0.4 0 0.6 1"/>
+      </rect>
       <rect x="728" y="170" width="2.5" height="190" rx="1.2" fill="#6E8BFF" opacity="0.3">
-        <animate attributeName="opacity" values="0.2;0.65;0.2" dur="4.4s" begin="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.2;0.68;0.2" dur="4.4s" begin="1.20s" repeatCount="indefinite"/>
       </rect>
       <text x="746" y="202" font-size="9" letter-spacing="2.5" fill="#4F5870" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">04</text>
       <text x="746" y="226" font-size="12.5" letter-spacing="2.2" fill="#D8DCE7">RANK</text>
       <line x1="746" y1="240" x2="906" y2="240" stroke="#1A2030"/>
-      <rect x="746" y="268" width="150" height="8" rx="4" fill="#2A3350">
-        <animate attributeName="width" from="0" to="150" begin="0.4s" dur="1.1s" fill="freeze" calcMode="spline" keySplines="0.2 1 0.3 1"/>
+      <line x1="746" y1="240.5" x2="906" y2="240.5" stroke="#6E8BFF" opacity="0.12"/>
+      <rect x="746" y="268" width="150" height="8" rx="4" fill="#2A3350"/>
+      <rect x="746" y="268" width="0" height="8" rx="4" fill="#6E8BFF" opacity="0.8">
+        <animate attributeName="width" values="0;150;150;0" keyTimes="0;0.24;0.8;1" dur="6s" begin="1.0s" repeatCount="indefinite" calcMode="spline" keySplines="0.2 0.7 0.3 1;0.4 0 0.6 1;0.45 0 0.55 1"/>
+        <animate attributeName="opacity" values="0.55;0.95;0.95;0.55" keyTimes="0;0.2;0.8;1" dur="6s" begin="1.0s" repeatCount="indefinite"/>
       </rect>
-      <rect x="746" y="268" width="150" height="8" rx="4" fill="#6E8BFF" opacity="0.75">
-        <animate attributeName="width" from="0" to="150" begin="0.4s" dur="1.1s" fill="freeze" calcMode="spline" keySplines="0.2 1 0.3 1"/>
-        <animate attributeName="opacity" values="0.55;0.95;0.55" dur="3s" begin="1.6s" repeatCount="indefinite"/>
+      <text x="920" y="275" text-anchor="end" font-size="9" letter-spacing="0.6" fill="#6D7CA8" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">0.94</text>
+      <rect x="746" y="286" width="150" height="8" rx="4" fill="#2A3350"/>
+      <rect x="746" y="286" width="0" height="8" rx="4" fill="#5C6FA8" opacity="0.8">
+        <animate attributeName="width" values="0;112;112;0" keyTimes="0;0.24;0.8;1" dur="6s" begin="1.15s" repeatCount="indefinite" calcMode="spline" keySplines="0.2 0.7 0.3 1;0.4 0 0.6 1;0.45 0 0.55 1"/>
+        <animate attributeName="opacity" values="0.55;0.95;0.95;0.55" keyTimes="0;0.2;0.8;1" dur="6s" begin="1.15s" repeatCount="indefinite"/>
       </rect>
-      <rect x="746" y="286" width="112" height="8" rx="4" fill="#2A3350">
-        <animate attributeName="width" from="0" to="112" begin="0.6s" dur="1.1s" fill="freeze" calcMode="spline" keySplines="0.2 1 0.3 1"/>
+      <text x="920" y="293" text-anchor="end" font-size="9" letter-spacing="0.6" fill="#6D7CA8" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">0.71</text>
+      <rect x="746" y="304" width="150" height="8" rx="4" fill="#2A3350"/>
+      <rect x="746" y="304" width="0" height="8" rx="4" fill="#44506E" opacity="0.8">
+        <animate attributeName="width" values="0;74;74;0" keyTimes="0;0.24;0.8;1" dur="6s" begin="1.3s" repeatCount="indefinite" calcMode="spline" keySplines="0.2 0.7 0.3 1;0.4 0 0.6 1;0.45 0 0.55 1"/>
+        <animate attributeName="opacity" values="0.55;0.95;0.95;0.55" keyTimes="0;0.2;0.8;1" dur="6s" begin="1.3s" repeatCount="indefinite"/>
       </rect>
-      <rect x="746" y="304" width="74" height="8" rx="4" fill="#2A3350">
-        <animate attributeName="width" from="0" to="74" begin="0.8s" dur="1.1s" fill="freeze" calcMode="spline" keySplines="0.2 1 0.3 1"/>
-      </rect>
+      <text x="920" y="311" text-anchor="end" font-size="9" letter-spacing="0.6" fill="#6D7CA8" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">0.43</text>
+      <circle cx="896" cy="272" r="1.6" fill="#96A8FF">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+
       <text x="746" y="336" font-size="11" fill="#6F778C" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">recall → refine</text>
       <text x="746" y="352" font-size="11" fill="#6F778C" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">profile · sensitivity</text>
     </g>
-
-    <!-- 05 cut -->
-    <g>
-      <rect x="954" y="170" width="196" height="190" rx="10" fill="#0A0D15" stroke="#1E2638"/>
+    <g opacity="0">
+      <animate attributeName="opacity" from="0" to="1" begin="0.93s" dur="0.6s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" from="0 10" to="0 0" begin="0.93s" dur="0.75s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 1 0.36 1"/>
+      <rect x="954" y="170" width="196" height="190" rx="10" fill="url(#cardFill)" stroke="#1E2638"/>
+      <rect x="954" y="170" width="196" height="1" rx="0.5" fill="#8FA6FF" opacity="0.14"/>
+      <rect x="954" y="170" width="196" height="190" rx="10" fill="none" stroke="#6E8BFF" opacity="0">
+        <animate attributeName="opacity" values="0;0.4;0" keyTimes="0;0.16;0.42" dur="5.6s" begin="4.40s" repeatCount="indefinite" calcMode="spline" keySplines="0.2 0.6 0.3 1;0.4 0 0.6 1"/>
+      </rect>
       <rect x="954" y="170" width="2.5" height="190" rx="1.2" fill="#6E8BFF" opacity="0.3">
-        <animate attributeName="opacity" values="0.2;0.65;0.2" dur="4.4s" begin="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.2;0.68;0.2" dur="4.4s" begin="1.60s" repeatCount="indefinite"/>
       </rect>
       <text x="972" y="202" font-size="9" letter-spacing="2.5" fill="#4F5870" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">05</text>
       <text x="972" y="226" font-size="12.5" letter-spacing="2.2" fill="#D8DCE7">CUT</text>
       <line x1="972" y1="240" x2="1132" y2="240" stroke="#1A2030"/>
-
+      <line x1="972" y1="240.5" x2="1132" y2="240.5" stroke="#6E8BFF" opacity="0.12"/>
       <rect x="972"  y="272" width="27" height="38" rx="3" fill="#121826" stroke="#26304A"/>
       <rect x="1006" y="272" width="27" height="38" rx="3" fill="#121A2B" stroke="#6E8BFF">
         <animate attributeName="stroke-opacity" values="0.45;1;0.45" dur="2.6s" repeatCount="indefinite"/>
+        <animate attributeName="fill-opacity" values="0.7;1;0.7" dur="2.6s" repeatCount="indefinite"/>
       </rect>
       <rect x="1040" y="272" width="27" height="38" rx="3" fill="#121826" stroke="#26304A"/>
       <rect x="1074" y="272" width="27" height="38" rx="3" fill="#121A2B" stroke="#6E8BFF">
         <animate attributeName="stroke-opacity" values="0.45;1;0.45" dur="2.6s" begin="0.8s" repeatCount="indefinite"/>
+        <animate attributeName="fill-opacity" values="0.7;1;0.7" dur="2.6s" begin="0.8s" repeatCount="indefinite"/>
       </rect>
       <rect x="1108" y="272" width="27" height="38" rx="3" fill="#121826" stroke="#26304A"/>
-      <g fill="#6E8BFF" opacity="0.8">
+      <g fill="#6E8BFF" opacity="0.85">
         <path d="M1016 285 L1016 297 L1026 291 Z"/>
         <path d="M1084 285 L1084 297 L1094 291 Z"/>
       </g>
+      <g stroke="#2A3350" stroke-width="0.6" opacity="0.9">
+        <line x1="1007" y1="272" x2="1013" y2="272"/><line x1="1007" y1="310" x2="1013" y2="310"/>
+        <line x1="1041" y1="272" x2="1047" y2="272"/><line x1="1041" y1="310" x2="1047" y2="310"/>
+        <line x1="1075" y1="272" x2="1081" y2="272"/><line x1="1075" y1="310" x2="1081" y2="310"/>
+      </g>
+      <line x1="972" y1="320" x2="1135" y2="320" stroke="#232B3E" stroke-width="1"/>
+      <rect x="1000" y="318" width="34" height="4" rx="2" fill="#6E8BFF" opacity="0.75">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.6s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="1068" y="318" width="34" height="4" rx="2" fill="#6E8BFF" opacity="0.75">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.6s" begin="0.8s" repeatCount="indefinite"/>
+      </rect>
+      <g>
+        <path d="M0 -3 L0 3 L5 0 Z" fill="#E8EAFF" opacity="0" transform="translate(972 320)">
+          <animateTransform attributeName="transform" type="translate" values="972 320;1135 320" dur="6s" begin="1.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.6 1"/>
+          <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.08;0.88;1" dur="6s" begin="1.8s" repeatCount="indefinite"/>
+        </path>
+      </g>
+
       <text x="972" y="336" font-size="11" fill="#6F778C" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">ffmpeg lossless</text>
       <text x="972" y="352" font-size="11" fill="#6F778C" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">subtitles · covers</text>
     </g>
-  </g>
 
   <!-- connectors -->
-  <g stroke="#44506E" stroke-width="1.1" fill="none">
-    <path d="M246 265 H268" stroke-dasharray="2 4" marker-end="url(#parrow)">
+    <path d="M246 265 H268" stroke="#44506E" stroke-width="1.1" stroke-dasharray="2 4" marker-end="url(#parrow)" fill="none">
       <animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1.1s" repeatCount="indefinite"/>
     </path>
-    <path d="M472 265 H494" stroke-dasharray="2 4" marker-end="url(#parrow)">
+    <g>
+      <circle r="3.40" fill="#96A8FF" opacity="0.2" filter="url(#packetGlow)">
+        <animateMotion dur="1.6s" begin="0.90s" repeatCount="indefinite" path="M246 265 H268"/>
+        <animate attributeName="opacity" values="0;0.55;0.55;0" keyTimes="0;0.1;0.84;1" dur="1.6s" begin="0.90s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2.2" fill="#C9D2FF">
+        <animateMotion dur="1.6s" begin="0.90s" repeatCount="indefinite" path="M246 265 H268"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="1.6s" begin="0.90s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <path d="M472 265 H494" stroke="#44506E" stroke-width="1.1" stroke-dasharray="2 4" marker-end="url(#parrow)" fill="none">
       <animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1.1s" repeatCount="indefinite"/>
     </path>
-    <path d="M698 265 H720" stroke-dasharray="2 4" marker-end="url(#parrow)">
+    <g>
+      <circle r="3.40" fill="#96A8FF" opacity="0.2" filter="url(#packetGlow)">
+        <animateMotion dur="1.6s" begin="1.10s" repeatCount="indefinite" path="M472 265 H494"/>
+        <animate attributeName="opacity" values="0;0.55;0.55;0" keyTimes="0;0.1;0.84;1" dur="1.6s" begin="1.10s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2.2" fill="#C9D2FF">
+        <animateMotion dur="1.6s" begin="1.10s" repeatCount="indefinite" path="M472 265 H494"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="1.6s" begin="1.10s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <path d="M698 265 H720" stroke="#44506E" stroke-width="1.1" stroke-dasharray="2 4" marker-end="url(#parrow)" fill="none">
       <animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1.1s" repeatCount="indefinite"/>
     </path>
-    <path d="M924 265 H946" stroke-dasharray="2 4" marker-end="url(#parrow)">
+    <g>
+      <circle r="3.40" fill="#96A8FF" opacity="0.2" filter="url(#packetGlow)">
+        <animateMotion dur="1.6s" begin="1.30s" repeatCount="indefinite" path="M698 265 H720"/>
+        <animate attributeName="opacity" values="0;0.55;0.55;0" keyTimes="0;0.1;0.84;1" dur="1.6s" begin="1.30s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2.2" fill="#C9D2FF">
+        <animateMotion dur="1.6s" begin="1.30s" repeatCount="indefinite" path="M698 265 H720"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="1.6s" begin="1.30s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <path d="M924 265 H946" stroke="#44506E" stroke-width="1.1" stroke-dasharray="2 4" marker-end="url(#parrow)" fill="none">
       <animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1.1s" repeatCount="indefinite"/>
     </path>
-  </g>
-  <g fill="#96A8FF">
-    <circle r="2.2"><animateMotion dur="1.4s" repeatCount="indefinite" path="M246 265 H268"/></circle>
-    <circle r="2.2"><animateMotion dur="1.4s" begin="0.35s" repeatCount="indefinite" path="M472 265 H494"/></circle>
-    <circle r="2.2"><animateMotion dur="1.4s" begin="0.7s" repeatCount="indefinite" path="M698 265 H720"/></circle>
-    <circle r="2.2"><animateMotion dur="1.4s" begin="1.05s" repeatCount="indefinite" path="M924 265 H946"/></circle>
-  </g>
+    <g>
+      <circle r="3.40" fill="#96A8FF" opacity="0.2" filter="url(#packetGlow)">
+        <animateMotion dur="1.6s" begin="1.50s" repeatCount="indefinite" path="M924 265 H946"/>
+        <animate attributeName="opacity" values="0;0.55;0.55;0" keyTimes="0;0.1;0.84;1" dur="1.6s" begin="1.50s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2.2" fill="#C9D2FF">
+        <animateMotion dur="1.6s" begin="1.50s" repeatCount="indefinite" path="M924 265 H946"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.86;1" dur="1.6s" begin="1.50s" repeatCount="indefinite"/>
+      </circle>
+    </g>
 
   <!-- score panel -->
-  <g>
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="1.0s" dur="0.8s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="translate" from="0 12" to="0 0" begin="1.0s" dur="0.95s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.22 1 0.36 1"/>
     <rect x="50" y="392" width="1100" height="118" rx="12" fill="#0A0D15" stroke="#1E2638"/>
+    <rect x="50" y="392" width="1100" height="118" rx="12" fill="url(#panelFill)"/>
+    <rect x="50" y="392" width="1100" height="1" rx="0.5" fill="#8FA6FF" opacity="0.18"/>
+    <rect x="50" y="392" width="1100" height="118" rx="12" fill="none" stroke="#6E8BFF" opacity="0.12">
+      <animate attributeName="opacity" values="0.07;0.24;0.07" dur="6s" repeatCount="indefinite"/>
+    </rect>
     <text x="72" y="420" font-size="9" letter-spacing="3" fill="#7D95FF" font-family="Inter, -apple-system, Arial, sans-serif">SIGNAL / 7 METHODS FUSED</text>
     <text x="1128" y="420" text-anchor="end" font-size="9" letter-spacing="2" fill="#454E68" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">SCORE → CANDIDATES → CLIPS</text>
 
-    <path d="M72 486 L140 480 L208 488 L276 474 L344 482 L412 458 L480 468 L548 438 L616 462 L684 446 L752 410 L820 478 L888 462 L956 484 L1024 468 L1128 486 L1128 492 L72 492 Z" fill="url(#curveFill)"/>
+    <g clip-path="url(#panelClip)">
+      <line x1="72" y1="430" x2="1128" y2="430" stroke="#A8B8FF" stroke-width="0.5" opacity="0.07"/>
+      <line x1="72" y1="452" x2="1128" y2="452" stroke="#A8B8FF" stroke-width="0.5" opacity="0.07"/>
+      <line x1="72" y1="474" x2="1128" y2="474" stroke="#A8B8FF" stroke-width="0.5" opacity="0.07"/>
+      <rect x="50" y="424" width="46" height="80" fill="url(#panelScan)" opacity="0.35">
+        <animate attributeName="x" values="30;1110" dur="10s" begin="3.2s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines="0.45 0 0.55 1"/>
+        <animate attributeName="opacity" values="0;0.5;0.5;0" keyTimes="0;0.1;0.86;1" dur="10s" begin="3.2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <path d="M72 486 L140 480 L208 488 L276 474 L344 482 L412 458 L480 468 L548 438 L616 462 L684 446 L752 410 L820 478 L888 462 L956 484 L1024 468 L1128 486 L1128 492 L72 492 Z" fill="url(#curveFill)" opacity="0">
+      <animate attributeName="opacity" from="0" to="0.95" begin="1.3s" dur="2.2s" fill="freeze"/>
+    </path>
+    <path d="M72 486 L140 480 L208 488 L276 474 L344 482 L412 458 L480 468 L548 438 L616 462 L684 446 L752 410 L820 478 L888 462 L956 484 L1024 468 L1128 486" fill="none" stroke="#6E8BFF" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" opacity="0.18" filter="url(#curveGlow)" stroke-dasharray="1200" stroke-dashoffset="1200">
+      <animate attributeName="stroke-dashoffset" from="1200" to="0" dur="2.8s" begin="1.3s" fill="freeze" calcMode="spline" keySplines="0.25 1 0.3 1" keyTimes="0;1"/>
+    </path>
     <path d="M72 486 L140 480 L208 488 L276 474 L344 482 L412 458 L480 468 L548 438 L616 462 L684 446 L752 410 L820 478 L888 462 L956 484 L1024 468 L1128 486" fill="none" stroke="url(#curveStroke)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1200" stroke-dashoffset="1200">
-      <animate attributeName="stroke-dashoffset" from="1200" to="0" dur="3s" begin="0.3s" fill="freeze" calcMode="spline" keySplines="0.25 1 0.3 1"/>
+      <animate attributeName="stroke-dashoffset" from="1200" to="0" dur="2.8s" begin="1.3s" fill="freeze" calcMode="spline" keySplines="0.25 1 0.3 1" keyTimes="0;1"/>
     </path>
 
     <line x1="752" y1="410" x2="752" y2="492" stroke="#6E8BFF" stroke-width="1" stroke-dasharray="2 5" opacity="0.5">
-      <animate attributeName="opacity" values="0.25;0.75;0.25" dur="3s" begin="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.75;0.25" dur="3s" begin="2s" repeatCount="indefinite"/>
     </line>
+    <circle cx="752" cy="410" r="7" fill="none" stroke="#96A8FF" stroke-width="0.8" opacity="0">
+      <animate attributeName="r" values="4;15" dur="2.8s" begin="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.55;0" dur="2.8s" begin="3s" repeatCount="indefinite"/>
+    </circle>
     <circle cx="752" cy="410" r="2.6" fill="#96A8FF">
-      <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" begin="1.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" begin="2s" repeatCount="indefinite"/>
     </circle>
     <text x="762" y="408" font-size="8" letter-spacing="1.5" fill="#96A8FF" font-family="'SF Mono', SFMono-Regular, Menlo, monospace">PEAK</text>
 
     <circle r="3" fill="#E8EAFF">
-      <animateMotion dur="6s" begin="1s" repeatCount="indefinite" path="M72 486 L140 480 L208 488 L276 474 L344 482 L412 458 L480 468 L548 438 L616 462 L684 446 L752 410 L820 478 L888 462 L956 484 L1024 468 L1128 486"/>
-      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="6s" begin="1s" repeatCount="indefinite"/>
+      <animateMotion dur="7s" begin="3.4s" repeatCount="indefinite" path="M72 486 L140 480 L208 488 L276 474 L344 482 L412 458 L480 468 L548 438 L616 462 L684 446 L752 410 L820 478 L888 462 L956 484 L1024 468 L1128 486"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="7s" begin="3.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="7" fill="#6E8BFF" opacity="0.22" filter="url(#packetGlow)">
+      <animateMotion dur="7s" begin="3.4s" repeatCount="indefinite" path="M72 486 L140 480 L208 488 L276 474 L344 482 L412 458 L480 468 L548 438 L616 462 L684 446 L752 410 L820 478 L888 462 L956 484 L1024 468 L1128 486"/>
+      <animate attributeName="opacity" values="0;0.5;0.5;0" keyTimes="0;0.05;0.9;1" dur="7s" begin="3.4s" repeatCount="indefinite"/>
     </circle>
 
     <rect x="530" y="495" width="90" height="6" rx="3" fill="#6E8BFF" opacity="0.8">
-      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" begin="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" begin="2.2s" repeatCount="indefinite"/>
     </rect>
     <rect x="748" y="495" width="80" height="6" rx="3" fill="#6E8BFF" opacity="0.8">
-      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" begin="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" begin="2.8s" repeatCount="indefinite"/>
     </rect>
     <rect x="256" y="495" width="54" height="6" rx="3" fill="#44506E" opacity="0.55"/>
+    <g font-family="'SF Mono', SFMono-Regular, Menlo, monospace" font-size="8" letter-spacing="1" fill="#61709E">
+      <text x="530" y="492">01</text><text x="748" y="492">02</text><text x="256" y="492">03</text>
+    </g>
   </g>
 
-  <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="9" letter-spacing="1.6" fill="#454E68">
+  <g font-family="'SF Mono', SFMono-Regular, Menlo, Consolas, monospace" font-size="9" letter-spacing="1.6" fill="#454E68" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="1.9s" dur="0.9s" fill="freeze"/>
     <text x="50" y="540">AUDIO · TEXT · DANMAKU · VISUAL — FUSED INTO ONE DECISION</text>
     <text x="1150" y="540" text-anchor="end">python · ffmpeg · whisperx</text>
   </g>
+
 </svg>
